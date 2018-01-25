@@ -1,0 +1,6 @@
+However, you should never store mutable instance data inside the Application object because if you assume that your data will stay there, your application will inevitably crash at some point with a NullPointerException. The application object is not guaranteed to stay in memory forever, it will get killed. Contrary to popular belief, the app won’t be restarted from scratch. Android will create a new Application object and start the activity where the user was before to give the illusion that the application was never killed in the first place.
+
+So how should we store shared application data? We should store shared data in one of the following ways:
+
+Explicitly pass the data to the Activity through the intent.
+Use one of the many ways to persist the data to disk.
